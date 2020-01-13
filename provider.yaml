@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: aws
+type: kubeform.com/aws
+data:
+  region: dXMtd2VzdC0yCg==

@@ -1,0 +1,19 @@
+apiVersion: aws.kubeform.com/v1alpha1
+kind: DbInstance
+metadata:
+  name: auroratest3
+spec:
+  allocatedStorage: 100
+  iops: 100
+  engine: aurora-mysql
+  engineVersion: "5.7.12"
+  skipFinalSnapshot: false
+  dbSubnetGroupName: "mcmains-db-subnet"
+  instanceClass: db.r5.large
+  name: mydb
+  username: foo
+  parameterGroupName: default.aurora-mysql5.7
+  providerRef:
+    name: aws
+  secretRef:
+    name: pass

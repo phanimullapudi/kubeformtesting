@@ -1,0 +1,19 @@
+apiVersion: aws.kubeform.com/v1alpha1
+kind: DbInstance
+metadata:
+  name: test2
+spec:
+  allocatedStorage: 5
+  storageType: gp2
+  engine: mysql
+  engineVersion: "5.7"
+  skipFinalSnapshot: false
+  dbSubnetGroupName: "testers-subnet-group"
+  instanceClass: db.t2.micro
+  name: mydb
+  username: foo
+  parameterGroupName: default.mysql5.7
+  providerRef:
+    name: aws
+  secretRef:
+    name: pass
